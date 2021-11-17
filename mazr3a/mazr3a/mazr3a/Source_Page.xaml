@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mazr3a.Source_Page" BackgroundColor="#94D0CC">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="30" VerticalOptions="Center">
+            <BoxView HeightRequest="10"/>
+            
+            <Frame BackgroundColor="#D1D9D9"  CornerRadius="50" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Labor" TextTransform="None" Grid.Row="0" Grid.Column="0" BackgroundColor="#EEC4C4" TextColor="Black" CornerRadius="20" ImageSource="labor.png" Clicked="Labor_Clicked"></Button>
+                    <Button Text="Register" TextTransform="None" Grid.Row="0" Grid.Column="1" BackgroundColor="#EEC4C4" TextColor="Black" CornerRadius="20" ImageSource="registration.png" Clicked="Users_Clicked"></Button>
+                    <Button Text="Activity" TextTransform="None" Grid.Row="1" Grid.Column="1" BackgroundColor="#EEC4C4" TextColor="Black" CornerRadius="20" ImageSource="activity.png" Clicked="Activity_Clicked"></Button>
+                    <Button Text="Add Sector" TextTransform="None" Grid.Row="1" Grid.Column="0" BackgroundColor="#EEC4C4" TextColor="Black"  CornerRadius="20" ImageSource="sector.png" Clicked="Sector_Clicked"></Button>
+                    <Button Text="Reports" TextTransform="None" Grid.Row="2" Grid.Column="0" BackgroundColor="#EEC4C4" TextColor="Black"  CornerRadius="20" ImageSource="report.png" Clicked="Reports_Clicked"></Button>
+                </Grid>
+            </Frame>
+        </StackLayout>
+       
+        
+    </ContentPage.Content>
+</ContentPage>

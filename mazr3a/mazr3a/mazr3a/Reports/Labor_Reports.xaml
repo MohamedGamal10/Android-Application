@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:mazr3a"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+             x:Class="mazr3a.Labor_Reports" BackgroundColor="#94D0CC">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30" Spacing="30">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Date From"></Label>
+                <DatePicker x:Name="DateFrom" HorizontalOptions="FillAndExpand"></DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Date To    "></Label>
+                <DatePicker x:Name="DateTo" HorizontalOptions="FillAndExpand"></DatePicker>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Generate Excel" TextTransform="None" Grid.Row="0" BackgroundColor="#EEC4C4" TextColor="Black" CornerRadius="20" Clicked="Generate_Labor_Excel_Clicked"></Button>
+                <Button Text="Generate Charts" TextTransform="None" Grid.Row="0" BackgroundColor="#EEC4C4" TextColor="Black" CornerRadius="20" Clicked="Generate_Labor_Charts_Clicked"></Button>
+            </StackLayout>
+                <Frame BackgroundColor="#EEC4C4">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Total : " FontAttributes="Bold"></Label>
+                    <Label x:Name="Tot"></Label>
+                </StackLayout>
+                </Frame>
+                <StackLayout>
+                    <Label />
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <Label />
+                </StackLayout>
+                <Label Text="Sum of Total Per Sector"></Label>
+                <forms:ChartView x:Name="Chart1" HeightRequest="300" />
+                <StackLayout x:Name="Chart1name" HeightRequest="300"></StackLayout>
+                <StackLayout>
+                    <Label />
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+                    <Label />
+                </StackLayout>
+                <Label Text="Sum of Number of labor Per Sector"></Label>
+                <forms:ChartView x:Name="Chart2" HeightRequest="300" />
+                <StackLayout x:Name="Chart2name" HeightRequest="300"></StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

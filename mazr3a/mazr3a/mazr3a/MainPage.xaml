@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mazr3a.MainPage" BackgroundImageSource="background.png">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="30" VerticalOptions="Center">
+            <BoxView HeightRequest="10"/>
+
+            <Frame BackgroundColor="White" HasShadow="False" CornerRadius="50" Opacity="0.7">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="Username"  Placeholder="Username"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           Keyboard="Text"  
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                    <Entry x:Name="Password" Placeholder="Password"  
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+            <Button  Text="Login" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" WidthRequest="150"  
+                    BackgroundColor="#F29191" 
+                     CornerRadius="60"
+                     Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

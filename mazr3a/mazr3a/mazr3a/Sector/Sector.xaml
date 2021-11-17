@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:mazr3a"
+             x:Class="mazr3a.Sector" BackgroundColor="#94D0CC">
+     <ContentPage.BindingContext>
+        <local:SectorViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout  Margin="5" Orientation="Vertical">
+            <AbsoluteLayout>
+                <Button Text="New" TextTransform="None" CornerRadius="25" AbsoluteLayout.LayoutBounds="0.99,0.9,100,50" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#D1D9D9" Clicked="New_Sector_Clicked"></Button>
+            </AbsoluteLayout>
+            <SearchBar Placeholder="Search" TextColor="Black" CancelButtonColor="Black" PlaceholderColor="Black" BackgroundColor="#D1D9D9" TextChanged="SearchBar_Sector_TextChanged"></SearchBar>
+            <ScrollView>
+                <ListView x:Name="SectorList" ItemsSource="{Binding sectoritemlist}" HasUnevenRows="True" SeparatorColor="#94D0CC">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Frame CornerRadius="20" HasShadow="True" BackgroundColor="#E4D8DC"></Frame>
+                                    <StackLayout Orientation="Vertical" Spacing="30" Margin="20" HorizontalOptions="End">
+                                        <Label Text="{Binding SectorId}" TextColor="Black" IsVisible="False"></Label>
+                                        <Label Text="{Binding FarmName}" TextColor="Black"></Label>
+                                        <Label Text="{Binding Sector}" TextColor="Black"></Label>
+                                        <Label Text="{Binding Owner}" TextColor="Black"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Spacing="50" HorizontalOptions="Start" Padding="20">
+                                        <Image Source="edit.png" WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Edit" CommandParameter="{Binding SectorId}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Image Source="delete.png" WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Delete" CommandParameter="{Binding SectorId}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

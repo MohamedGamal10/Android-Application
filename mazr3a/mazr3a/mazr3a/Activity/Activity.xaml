@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:mazr3a"
+             x:Class="mazr3a.Activity" BackgroundColor="#94D0CC">
+    <ContentPage.BindingContext>
+        <local:ActivityViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout  Margin="5" Orientation="Vertical">
+            <AbsoluteLayout>
+                <Button Text="New" TextTransform="None" CornerRadius="25" AbsoluteLayout.LayoutBounds="0.99,0.9,100,50" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#D1D9D9" Clicked="New_Clicked"></Button>
+            </AbsoluteLayout>
+            <SearchBar Placeholder="Search" TextColor="Black" CancelButtonColor="Black" PlaceholderColor="Black" BackgroundColor="#D1D9D9" TextChanged="SearchBar_TextChanged"></SearchBar>
+            <ScrollView>
+                <ListView x:Name="ActivityList" ItemsSource="{Binding itemlist}" HasUnevenRows="True" SeparatorColor="#94D0CC">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Frame CornerRadius="20" HasShadow="True" BackgroundColor="#E4D8DC"></Frame>
+                                    <StackLayout Orientation="Vertical" Spacing="50" Margin="20">
+                                        <Label Text="{Binding ActivityId}" TextColor="Black" IsVisible="False"></Label>
+                                        <Label Text="{Binding ActivityCode}" TextColor="Black"></Label>
+                                        <Label Text="{Binding ActivityAct}" TextColor="Black"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Spacing="40" HorizontalOptions="Start" Padding="20">
+                                        <Image Source="edit.png" WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Edit" CommandParameter="{Binding ActivityId}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Image Source="delete.png" WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Delete" CommandParameter="{Binding ActivityId}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:mazr3a"
+             x:Class="mazr3a.Reports" BackgroundColor="#94D0CC">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="30" VerticalOptions="Center">
+            <BoxView HeightRequest="10"/>
+
+            <Frame BackgroundColor="#D1D9D9"  CornerRadius="50" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Labor Reports" TextTransform="None" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#EEC4C4" TextColor="Black" CornerRadius="20" ImageSource="labor.png" Clicked="Labor_Reports_Clicked"></Button>
+                    </Grid>
+            </Frame>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
